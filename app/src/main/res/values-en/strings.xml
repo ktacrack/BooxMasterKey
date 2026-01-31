@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MasterKey</string>
+    <string name="language_label">Language / Idioma</string>
+    <string name="not_available">Not available</string>
+
+    <!-- Configuracions bàsiques -->
+    <string name="settings">⚙️ Settings</string>
+    <string name="developer_options">👨‍💻 Developer Options</string>
+    <string name="app_settings">📦 App Settings</string>
+
+    <!-- Configuracions específiques Boox -->
+    <string name="navigation_ball">🔵 Navigation Ball</string>
+
+    <!-- Configuracions de pantalla i sistema -->
+    <string name="display_settings">📱 Display Settings</string>
+    <string name="battery_settings">🔋 Battery Settings</string>
+    <string name="wifi_settings">🌐 WiFi Settings</string>
+    <string name="sound_settings">🔊 Sound Settings</string>
+    <string name="date_time">📅 Date &amp; Time</string>
+    <string name="language_input">🌍 Language &amp; Input</string>
+    <string name="storage_settings">💾 Storage Settings</string>
+    <string name="security_settings">🔒 Security Settings</string>
+    <string name="accessibility">♿ Accessibility</string>
+
+    <!-- Configuracions avançades -->
+    <string name="about_device">ℹ️ About Device</string>
+    <string name="system_updates">🔄 System Updates</string>
+
+    <!-- Botó sortir -->
+    <string name="exit">❌ Exit</string>
+
+    <!-- Signature -->
+    <string name="created_by">Created by ktacrack</string>
+
+</resources>

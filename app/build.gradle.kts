@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("base")
 }
 
 android {
@@ -12,14 +13,26 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            resValue(
+                "string",
+                "app_name",
+                "Boox Master Key v${defaultConfig.versionName} (debug)"
+            )
+        }
+
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            resValue(
+                "string",
+                "app_name",
+                "Boox Master Key v${defaultConfig.versionName}"
+            )
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -34,7 +47,14 @@ android {
 
     buildFeatures {
         buildConfig = true
+        resValues = true
     }
+}
+
+base {
+    archivesName.set(
+        "BooxMasterKey-${android.defaultConfig.versionName}"
+    )
 }
 
 dependencies {
@@ -44,24 +64,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-}
-
-// ← AFEGEIX AIXÒ AL FINAL (FORA del bloc android)
-tasks.register("renameApk") {
-    doLast {
-        val apkDir = file("${layout.buildDirectory.get()}/outputs/apk/release")
-        if (apkDir.exists()) {
-            apkDir.listFiles()?.forEach { file ->
-                if (file.name.endsWith(".apk")) {
-                    val newFile = File(apkDir, "BooxMasterKey-v${android.defaultConfig.versionName}.apk")
-                    file.renameTo(newFile)
-                    println("APK renamed to: ${newFile.name}")
-                }
-            }
-        }
-    }
-}
-
-tasks.named("assembleRelease") {
-    finalizedBy("renameApk")
 }

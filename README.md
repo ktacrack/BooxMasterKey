@@ -12,7 +12,7 @@ Aquest és l'únic repositori oficial de BooxConfig. Només descarrega l'aplicac
 
 🔒 **Autor:** ktacrack  
 📄 **Llicència:** MIT License  
-🔗 **Official URL:** https://github.com/ktacrack/BooxConfig
+🔗 **Official URL:** https://github.com/ktacrack/BooxMasterKey
 
 ---
 
@@ -28,13 +28,13 @@ Aquest és l'únic repositori oficial de BooxConfig. Només descarrega l'aplicac
 ## Instal·lació
 
 ### Opció 1: Des de Releases
-1. Descarrega l'APK des de [Releases](https://github.com/ktacrack/BooxConfig/releases)
+1. Descarrega l'APK des de [Releases](https://github.com/ktacrack/BooxMasterKey/releases)
 2. Instal·la l'APK al teu dispositiu Boox
 3. Obre l'aplicació i selecciona l'opció desitjada
 
 ### Opció 2: Compilar des del codi
 1. Clona el repositori
-git clone https://github.com/ktacrack/BooxConfig.git
+git clone https://github.com/ktacrack/BooxMasterKey.git
 2. Obre el projecte amb Android Studio
 3. Compila i instal·la al teu dispositiu
 

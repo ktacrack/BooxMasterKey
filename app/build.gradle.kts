@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.boox.masterkey"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.boox.masterkey"
@@ -16,6 +14,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Nom personalitzat de l'APK
+        setProperty("archivesBaseName", "BooxMasterKey-v$versionName")
     }
 
     buildTypes {
@@ -28,10 +29,12 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     buildFeatures {
         buildConfig = true
     }

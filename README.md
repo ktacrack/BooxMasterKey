@@ -74,7 +74,9 @@ MasterBooxKey/
 │           │   │   └── spinner_dropdown_item.xml
 │           │   ├── values/
 │           │   │   └── strings.xml
-│           │   ├── values-en/
+│           │   ├── values-ca/
+│           │   │   └── strings.xml
+│           │   ├── values-es/
 │           │   │   └── strings.xml
 │           │   ├── drawable/
 │           │   └── mipmap/

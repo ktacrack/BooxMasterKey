@@ -12,7 +12,7 @@
 
 ⚠️ **Official Repository**
 
-This is the only official BooxConfig repository. Only download the app from here or from verified releases. Any fork or copy may contain unauthorized modifications.
+This is the only official Boox Master Key repository. Only download the app from here or from verified releases. Any fork or copy may contain unauthorized modifications.
 
 ---
 

@@ -31,9 +31,9 @@ Aquest és l'únic repositori oficial de Boox Master Key. Només descarrega l'ap
 - ✅ Opcions d'emmagatzematge
 - ✅ Interfície senzilla i nativa
 - 🌍 Idiomes disponibles:
--   Català
--   English
--   Español
+  - Català
+  - English
+  - Español
 
 ## Instal·lació
 

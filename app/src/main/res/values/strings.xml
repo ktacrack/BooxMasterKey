@@ -1,34 +1,37 @@
 <resources>
     <string name="app_name">Boox Master Key</string>
-    <string name="language_label">Language / Idioma</string>
-    <string name="not_available">No disponible</string>
+    <string name="language_label">Language</string>
 
     <!-- Configuracions bàsiques -->
-    <string name="settings">⚙️ Configuració</string>
-    <string name="developer_options">👨‍💻 Opcions de desenvolupador</string>
-    <string name="app_settings">📦 Configuració d\'aplicacions</string>
+    <string name="settings">⚙️ Settings</string>
+    <string name="developer_options">👨‍💻 Developer Options</string>
+    <string name="app_settings">📦 App Settings</string>
 
     <!-- Configuracions específiques Boox -->
-    <string name="navigation_ball">🔵 Bola de navegació</string>
+    <string name="navigation_ball">🔵 Navigation Ball</string>
 
     <!-- Configuracions de pantalla i sistema -->
-    <string name="display_settings">📱 Configuració de pantalla</string>
-    <string name="battery_settings">🔋 Configuració de bateria</string>
-    <string name="wifi_settings">🌐 Configuració WiFi</string>
-    <string name="sound_settings">🔊 Configuració de so</string>
-    <string name="date_time">📅 Data i hora</string>
-    <string name="language_input">🌍 Idioma i entrada</string>
-    <string name="storage_settings">💾 Configuració d\'emmagatzematge</string>
-    <string name="security_settings">🔒 Configuració de seguretat</string>
-    <string name="accessibility">♿ Accessibilitat</string>
+    <string name="display_settings">📱 Display Settings</string>
+    <string name="battery_settings">🔋 Battery Settings</string>
+    <string name="wifi_settings">🌐 WiFi Settings</string>
+    <string name="sound_settings">🔊 Sound Settings</string>
+    <string name="date_time">📅 Date &amp; Time</string>
+    <string name="language_input">🌍 Language &amp; Input</string>
+    <string name="storage_settings">💾 Storage Settings</string>
+    <string name="security_settings">🔒 Security Settings</string>
+    <string name="accessibility">♿ Accessibility</string>
 
     <!-- Configuracions avançades -->
-    <string name="about_device">ℹ️ Sobre el dispositiu</string>
-    <string name="system_updates">🔄 Actualitzacions del sistema</string>
+    <string name="about_device">ℹ️ About Device</string>
+    <string name="system_updates">🔄 System Updates</string>
 
     <!-- Botó sortir -->
-    <string name="exit">❌ Sortir</string>
+    <string name="exit">❌ Exit</string>
 
-    <!-- Signatura -->
-    <string name="created_by">Creada per ktacrack</string>
+    <!-- Signature -->
+    <string name="created_by">Created by ktacrack</string>
+
+    <!-- Error -->
+    <string name="not_available">Option not available on this device</string>
+
 </resources>

@@ -21,6 +21,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Assegurar que l'app usa l'idioma guardat (anglès per defecte)
+        val sharedPrefs = getSharedPreferences("AppSettings", MODE_PRIVATE)
+        val savedLanguage = sharedPrefs.getString("language", "en") // "en" per defecte
+
+        val locale = when (savedLanguage) {
+            "ca" -> Locale.forLanguageTag("ca")
+            "es" -> Locale.forLanguageTag("es")
+            else -> Locale.ENGLISH
+        }
+        val appLocale = LocaleListCompat.create(locale)
+        androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(appLocale)
+
         val layout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(40, 40, 40, 40)
@@ -63,38 +75,50 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(languageLabel)
 
-        var isInitializing = true  // ← AFEGIT: Variable de control
+        var isInitializing = true
 
         val languageSpinner = Spinner(this).apply {
-            val languages = arrayOf("Català", "English")
+            // ← CANVIAT: Afegit Español
+            val languages = arrayOf("English", "Català", "Español")
             val spinnerAdapter = ArrayAdapter(
                 this@MainActivity,
-                R.layout.spinner_item,  // ← Canviat: usa el teu layout
+                R.layout.spinner_item,
                 languages
             )
-            spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)  // ← Canviat: usa el teu dropdown
+            spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
             adapter = spinnerAdapter
 
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply {
-                setMargins(0, 0, 10,32)
+                setMargins(0, 0, 10, 32)
             }
 
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    if (isInitializing) return  // ← AFEGIT: Evita canvi durant inicialització
+                    if (isInitializing) return
 
-                    val locale = resources.configuration.locales[0]
-                    val shouldBeCatalan = position == 0
-                    val isCatalan = locale.language == "ca"
-
-                    if (shouldBeCatalan != isCatalan) {
-                        val newLocale = if (shouldBeCatalan) Locale.forLanguageTag("ca") else Locale.ENGLISH
-                        val appLocale = LocaleListCompat.create(newLocale)
-                        androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(appLocale)
+                    // ← MODIFICAT: Suport per 3 idiomes
+                    val newLanguage = when (position) {
+                        0 -> "en"
+                        1 -> "ca"
+                        2 -> "es"
+                        else -> "en"
                     }
+
+                    // Guardar preferència
+                    val prefs = getSharedPreferences("AppSettings", MODE_PRIVATE)
+                    prefs.edit().putString("language", newLanguage).apply()
+
+                    // Aplicar canvi d'idioma
+                    val newLocale = when (newLanguage) {
+                        "ca" -> Locale.forLanguageTag("ca")
+                        "es" -> Locale.forLanguageTag("es")
+                        else -> Locale.ENGLISH
+                    }
+                    val newAppLocale = LocaleListCompat.create(newLocale)
+                    androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(newAppLocale)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -103,10 +127,16 @@ class MainActivity : AppCompatActivity() {
 
         layout.addView(languageSpinner)
 
-        // Seleccionar idioma inicial
-        val initialLocale = resources.configuration.locales[0]
-        languageSpinner.setSelection(if (initialLocale.language == "ca") 0 else 1, false)
-        isInitializing = false  // ← AFEGIT: Marca com a inicialitzat
+        // ← MODIFICAT: Seleccionar idioma inicial (3 opcions)
+        val currentLanguage = sharedPrefs.getString("language", "en")
+        val initialPosition = when (currentLanguage) {
+            "en" -> 0
+            "ca" -> 1
+            "es" -> 2
+            else -> 0
+        }
+        languageSpinner.setSelection(initialPosition, false)
+        isInitializing = false
 
         // Configuracions bàsiques
         addButton(R.string.settings, Intent(Settings.ACTION_SETTINGS))
@@ -146,14 +176,14 @@ class MainActivity : AppCompatActivity() {
 
             setOnClickListener {
                 finishAffinity()
-                android.os.Process.killProcess(android.os.Process.myPid())  // ← O aquesta
+                android.os.Process.killProcess(android.os.Process.myPid())
             }
         }
         layout.addView(exitBtn)
 
         // Signatura al final
         val signature = TextView(this).apply {
-            text = getString(R.string.created_by)  // ← Canvia aquesta línia
+            text = getString(R.string.created_by)
             textSize = 16f
             gravity = android.view.Gravity.CENTER
             setTextColor(android.graphics.Color.GRAY)

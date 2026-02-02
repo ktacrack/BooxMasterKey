@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boox Master Key</string>
+    <string name="language_label">Idioma</string>
+
+    <!-- Configuraciones básicas -->
+    <string name="settings">⚙️ Configuración</string>
+    <string name="developer_options">👨‍💻 Opciones de desarrollador</string>
+    <string name="app_settings">📦 Configuración de aplicaciones</string>
+
+    <!-- Configuraciones específicas Boox -->
+    <string name="navigation_ball">🔵 Bola de navegación</string>
+
+    <!-- Configuraciones de pantalla y sistema -->
+    <string name="display_settings">📱 Configuración de pantalla</string>
+    <string name="battery_settings">🔋 Configuración de batería</string>
+    <string name="wifi_settings">🌐 Configuración WiFi</string>
+    <string name="sound_settings">🔊 Configuración de sonido</string>
+    <string name="date_time">📅 Fecha y hora</string>
+    <string name="language_input">🌍 Idioma y entrada</string>
+    <string name="storage_settings">💾 Configuración de almacenamiento</string>
+    <string name="security_settings">🔒 Configuración de seguridad</string>
+    <string name="accessibility">♿ Accesibilidad</string>
+
+    <!-- Configuraciones avanzadas -->
+    <string name="about_device">ℹ️ Información del dispositivo</string>
+    <string name="system_updates">🔄 Actualizaciones del sistema</string>
+
+    <!-- Botón salir -->
+    <string name="exit">❌ Salir</string>
+
+    <!-- Firma -->
+    <string name="created_by">Creada por ktacrack</string>
+
+    <!-- Error -->
+    <string name="not_available">Opción no disponible en este dispositivo</string>
+
+</resources>
